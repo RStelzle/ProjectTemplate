@@ -1,0 +1,75 @@
+\documentclass[
+  fontsize=11pt,
+  parskip=half-, %zusätzliche halbe Zeile Abstand vor neuem Absatz
+  english,ngerman,
+  paper=a4,
+  %twoside, %Wenn drinn, guckt er, dass ungerade Seiten links am Rand und
+  			%gerade Seiten rechts am  Rand sind. Wenn man halt nicht nur ne PD
+  			%sondern n Buch oder so machen will
+  usegeometry, %Infos an geometry weiterreichen
+  toc=listof,
+  captions=tableabove,
+  %showframe,
+  bibliography=totoc, %mit totoc ohne Nummer ins TOC mit nottotoc nicht im TOC
+]{scrartcl}
+
+
+\input{praeambel}
+
+\begin{document}
+	
+	
+%%Titelseite erstellen
+%Die Titelseite ist ein wenig inspiriert von der Beispieltitelseite aus der LV
+\newgeometry{lmargin=2cm, rmargin=2cm, tmargin=1cm, bmargin=2.5cm}
+\begin{titlepage}
+	\begin{center}
+		\sffamily
+		\vspace*{1.5cm}
+		\Huge\bfseries\scshape
+		Titel des Projekts\\
+		\Large
+		Untertitel des Projekts\\[3cm]
+		\vspace*{0.2cm}
+		\normalsize\mdseries\upshape
+		Hausarbeit im Modul\\
+		\large (XX) Beispielmodul\\
+		\normalsize\mdseries\upshape
+		in der Lehrveranstaltung\\
+		\large Beispiellehrveranstaltung\\
+		\normalsize bei Max Mustermann\\
+		\large Abgabe ABGABEDATUM
+		
+		\vfill
+		\upshape\Large
+		Robert Stelzle\\
+		\mdseries
+		\url{r.stelzle@fu-berlin.de}\\[1ex]% Höhe vom kleinen x
+		\normalsize
+		Matrikelnummer: 1234567\\[1cm]
+		BA Politikwissenschaft (150 LP)\\
+		Allgemeine Berufsvorbereitung (30 LP)\\
+		X. Fachsemester\\[1cm]
+		\begin{minipage}[c]{0.65\linewidth}
+			\centering Es gilt die Studien- und Prüfungsordnung 2016 des Fachbereichs Politik- und 
+			Sozialwissenschaften der Freien Universität Berlin für den Bachelorstudiengang 
+			Politikwissenschaft. 
+		\end{minipage}
+		
+		
+	\end{center}
+\end{titlepage}
+\restoregeometry
+\setcounter{page}{1}
+
+
+\tableofcontents
+\newpage
+
+\input{contents}
+
+
+\end{document}
+
+
+

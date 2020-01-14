@@ -1,0 +1,118 @@
+
+
+%%Festlegen von Metainformationen des Dokuments%%%
+\title{\LaTeX\xspace für Politikwissenschaftler}
+\subtitle{Anwendungsbeispiele}
+\author{Robert Stelzle}
+
+
+
+
+%%1.5facher Zeilenabstand, außer Fußnoten
+\usepackage[onehalfspacing]{setspace}   %%Siehe KomaScript Dokumentation S. 40			
+
+%% Blockzitate mit einfachem Zeilenabstand
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{quote}{\par\begin{singlespace*}}
+\AfterEndEnvironment{quote}{\end{singlespace*}\par}
+
+
+%%%Schriften Laden%%%
+\usepackage{amsmath}%VOR unicode-math Laden
+\usepackage{fontspec}% Zum Laden von Schriften
+\usepackage{libertinus}% Macht gesamte Schrifteneinstellung, einschl. Mathe
+\usepackage{unicode-math} %Mathematischer Zeichensatz
+\setmonofont[Scale=MatchLowercase,
+	FakeStretch=0.9]{Consolas}   %% die sieht besser aus als die monotype von libertine
+\usepackage{nicefrac}
+
+
+%%%Seitenlayout und Textsatz(Worttrennung etc.)%%%
+\usepackage{microtype} %Mikrotypografie; schönerer Blocksatz
+\usepackage{xspace} %Leerzeichen Schützen
+
+\usepackage{geometry} %Alles rund um Ränder
+\geometry{lmargin=2.5cm, rmargin=3.5cm, tmargin=2.5cm, bmargin=2.5cm,
+	includeheadfoot,} %Kopf- und Fußzeile auch innerhalb der margins
+
+%Kopf/Fußzeilen uvm.
+\usepackage[automark,
+headsepline=1pt, footsepline=1pt,
+]{scrlayer-scrpage} 
+\ohead{Robert Stelzle}  %%Kopfzeile außen (hier rechts, weil einseitiges 
+					%%Dokument)
+\ofoot*{Abgabedatum} %*
+\ihead{\headmark}
+\setkomafont{pagenumber}{\itshape}
+\ifoot*{Seite \pagemark}
+\chead{}
+\cfoot*{}
+
+
+%%%Sprachenspezifisches%
+\usepackage{babel}%     Alles sprachenspezische wie Datum, Titel, usw
+\usepackage{csquotes}% 	Schickere (bzw. richtige) Anführungszeichen mit \enquote{}
+
+
+
+%%Literatur
+
+\usepackage[backend=biber, 
+style=authoryear-ibid,minnames=1,maxnames=3,isbn=false,date=year, sorting=nyt]{biblatex}% 
+%BIbliografie
+\addbibresource{literatur.bib}   %%% Hier ggf. die korrekte .bib Datei einbinden
+\DefineBibliographyStrings{ngerman}{andothers={et\,al\adddot}}  %% et. al definieren
+\DefineBibliographyStrings{ngerman}{nodate={o.\,D.}} 			%% o.D. Definieren
+
+
+
+
+
+%%Grafiken
+
+\usepackage{graphicx}% Alles rund um Grafik
+
+
+%%Tabellen
+
+\usepackage{xcolor}%Für Farbe in Tabellen usw.
+\usepackage{booktabs} %Schönere Tabellen
+\usepackage{array}   %Erweiterte Spaltentypen
+\usepackage{tabularx}
+
+
+%%Sonstiges
+
+\usepackage{blindtext}  %% Mit \blindtext Beispieltext (statt Lorem Ipsum) einfügen
+\usepackage{url} %URLs in Verbatime und URL Freundlicher Zeilenumbruch + verlinkung
+\usepackage{varioref} %Schönere Referenzen
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{capt-of}
+
+
+\setkomafont{captionlabel}{\bfseries\small\sffamily} %Label von Gleitobjekten Fett & Serifenlos
+\setkomafont{caption}{\small\sffamily} %Über-/Unterschriften von Gleitobjekten Serifenlos
+
+
+
+
+%%----Eigene Definitionen---
+
+\newcommand\oAE {o.\,Ä.\xspace}
+\newcommand\zB {z.\,B.\xspace}
+
+
+%% Schicke Autorennennung unter Blockzitat. Je nachdem ob das noch in die Zeile passt oder nicht, aber immer rechtsbündig
+\newcommand*{\signed}[1]%
+	{\unskip\hspace*{1em plus 1fill}%
+	\nolinebreak[3]\hspace*{\fill}\mbox{\emph{#1}}}
+
+
+
+%Anpassung Abstände um subsection
+\RedeclareSectionCommand[%
+beforeskip=-1.5\lineskip,
+afterskip=\lineskip
+]{subsection}
+

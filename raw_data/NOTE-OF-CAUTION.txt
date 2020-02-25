@@ -1,0 +1,1 @@
+Make sure to add any datafiles you don´t have the rights to share to the .gitignore file in the main directory.

@@ -1,7 +1,3 @@
-Done! LaTeX Template zusammenbasteln (ordner latex)
-
-bookdown/RMD zu Website export angucken, um mehrere RMD files aneinanderzuhängen (ordner notebooks + (odrner documentation (wenn das in einen extra ordner kann/muss))
-
 beamer presentation zeugs halt ein MWE (ordner presentation)
 
 

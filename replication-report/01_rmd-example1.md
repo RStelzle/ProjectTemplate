@@ -3,24 +3,23 @@ RMD-Example 1
 
 ``` r
 library(tidyverse)
+
+latexImg = function(latex){
+
+    link = paste0('http://latex.codecogs.com/gif.latex?',
+           gsub('\\=','%3D',URLencode(latex)))
+
+    link = gsub("(%..)","\\U\\1",link,perl=TRUE)
+    return(paste0('![](',link,')'))
+} ## geklaut von https://github.com/STAT545-UBC/Discussion/issues/102#issuecomment-142482040
 ```
-
-    ## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
-
-    ## <U+2713> ggplot2 3.2.1     <U+2713> purrr   0.3.3
-    ## <U+2713> tibble  2.1.3     <U+2713> dplyr   0.8.3
-    ## <U+2713> tidyr   1.0.0     <U+2713> forcats 0.4.0
-    ## <U+2713> readr   1.3.1
-
-    ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
 
 ## GitHub Documents
 
 This is an R Markdown format used for publishing markdown documents to
 GitHub. When you click the **Knit** button all R code chunks are run and
 a markdown file (.md) suitable for publishing to GitHub is generated.
+![](http://latex.codecogs.com/gif.latex?a%20%3D%20%5Cfrac%7Bb%7D%7Bc%7D)
 
 ## Including Code
 

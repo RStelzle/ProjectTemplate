@@ -3,7 +3,7 @@
 raw_data/*
 cache_data/*
 
-# exception to the rule
+# exception to the rule to keep the folders synced
 raw_data/place-raw-data-here.gitkeep
 cache_data/place-any-temporaryly-generated-data-here.gitkeep
 

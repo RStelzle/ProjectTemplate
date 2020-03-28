@@ -3,7 +3,26 @@ RMD-Example 1
 
 ``` r
 library(tidyverse)
+```
 
+    ## Warning: Paket 'tidyverse' wurde unter R Version 3.6.3 erstellt
+
+    ## -- Attaching packages ------------------------------------------------------------------------- tidyverse 1.3.0 --
+
+    ## v ggplot2 3.3.0     v purrr   0.3.3
+    ## v tibble  2.1.3     v dplyr   0.8.5
+    ## v tidyr   1.0.2     v stringr 1.4.0
+    ## v readr   1.3.1     v forcats 0.5.0
+
+    ## Warning: Paket 'tidyr' wurde unter R Version 3.6.3 erstellt
+
+    ## Warning: Paket 'forcats' wurde unter R Version 3.6.3 erstellt
+
+    ## -- Conflicts ---------------------------------------------------------------------------- tidyverse_conflicts() --
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
+
+``` r
 latexImg = function(latex){
 
     link = paste0('http://latex.codecogs.com/gif.latex?',

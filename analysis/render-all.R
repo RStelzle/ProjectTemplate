@@ -4,6 +4,7 @@
 library(here)
 library(fs)
 library(stringr)
+library(callr)
 
 
 ## Clearing report directory
@@ -11,11 +12,12 @@ dir_delete(here("replication-report"))
 dir_create(here("replication-report"))
 
 ##Rendering all .Rmd files
-rmd_files <- list.files(here("analysis"), pattern = "\\.Rmd")
+rmd_files <- as.list(list.files(here("analysis"), pattern = "\\.Rmd"))
 
-for (file in rmd_files){
-  rmarkdown::render(input = file)
-}
+render_separately <- function(...) callr::r(
+  function(...) rmarkdown::render(..., envir = globalenv()), args = list(...), show = TRUE)
+
+lapply(rmd_files, render_separately)
 
 
 ## Copying the _files directories

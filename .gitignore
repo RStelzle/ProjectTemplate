@@ -1,3 +1,16 @@
+# Ensuring Copyrighted files aren´t synched to GitHub etc.
+# excluding folders raw_data and cache_data
+raw_data/*
+cache_data/*
+
+# exception to the rule
+raw_data/place-raw-data-here.gitkeep
+cache_data/place-any-temporaryly-generated-data-here.gitkeep
+
+
+
+
+
 # LaTeX
 * .aux
 *.bbl

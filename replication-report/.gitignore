@@ -1,7 +1,0 @@
-## Do not sync example files
-01_rmd-example1_files/*
-02_rmd-example2_files/*
-01_rmd-example1.html
-01_rmd-example1.md
-02_rmd-example2.html
-02_rmd-example2.md

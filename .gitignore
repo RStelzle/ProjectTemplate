@@ -9,8 +9,6 @@ cache_data/place-any-temporaryly-generated-data-here.gitkeep
 
 
 
-
-
 # LaTeX
 * .aux
 *.bbl
@@ -21,3 +19,13 @@ cache_data/place-any-temporaryly-generated-data-here.gitkeep
 *.run.xml
 *.synctex.gz
 *.toc
+
+
+# Excluding example output from being synced
+
+replication-report/01_rmd-example1_files/*
+replication-report/02_rmd-example2_files/*
+replication-report/01_rmd-example1.html
+replication-report/01_rmd-example1.md
+replication-report/02_rmd-example2.html
+replication-report/02_rmd-example2.md

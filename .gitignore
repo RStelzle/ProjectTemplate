@@ -10,7 +10,7 @@ cache_data/place-any-temporaryly-generated-data-here.gitkeep
 
 
 # LaTeX
-* .aux
+*.aux
 *.bbl
 *.bcf
 *.blg
